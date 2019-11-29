@@ -28,11 +28,16 @@ public class CameraFollow : MonoBehaviour
         // kameram oyuncunun pozisyonunun followDistance kaar arkasina olacak
         // kameramin poziyonu + (oyuncumun arka yonu * followDistance)
         if (!isTurnAroundModeOn) {
-            SmoothMovement(target.position + (-target.forward * followDistance) + (target.up * upOffset) + (target.right * rightOffset));
+            SmoothMovement(target.position + (-target.forward * followDistance) + 
+                (target.up * upOffset) + (target.right * rightOffset));
+            // new Vector3(target.position.x + rightOffset, 
+            //            target.position.y + upOffset, 
+            //            target.position.z-followDistance);
             SmoothRotation(target.rotation * Quaternion.Euler(xRotation, yRotation , 0));
         } else {
             LookAtTarget();
-            SmoothMovement(target.position + (-transform.forward * turnAroundModeFollowDistance) + (transform.right * turnAroundModeRightOffset));
+            SmoothMovement(target.position + (-transform.forward * turnAroundModeFollowDistance) + 
+                (transform.right * turnAroundModeRightOffset));
             
         }
         

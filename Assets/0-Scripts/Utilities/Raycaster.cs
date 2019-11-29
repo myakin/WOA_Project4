@@ -6,7 +6,8 @@ public class Raycaster : MonoBehaviour
 {
     public RaycastHit RaycastForward(float aMaxDistance) {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, aMaxDistance, 1<<0, QueryTriggerInteraction.Ignore)) {
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 
+            aMaxDistance, 1<<0, QueryTriggerInteraction.Ignore)) {
             return hit;
         }
         return hit;
@@ -17,12 +18,5 @@ public class Raycaster : MonoBehaviour
             return hit.distance;
         }
         return -1f;
-    }
-    public RaycastHit RaycastDown(float aMaxDistance) {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, - transform.up, out hit, aMaxDistance, 1<<0, QueryTriggerInteraction.Ignore)) {
-            return hit;
-        }
-        return hit;
     }
 }
