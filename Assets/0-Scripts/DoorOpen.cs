@@ -12,6 +12,8 @@ public class DoorOpen : MonoBehaviour
     private bool isOpening;
     private bool isClosing;
     private Quaternion targetRot;
+    private Quaternion initialRot;
+    string task="";
 
 
     public void OpenDoor() {
@@ -21,9 +23,12 @@ public class DoorOpen : MonoBehaviour
         if (!isOpening) {
             isOpening =true;
             isAnimating=true;
+            initialRot = hinge.transform.rotation;
             targetRot = openDoorRotationDummy.transform.rotation;
             StartCoroutine(AnimateDoor());
             isClosing=false;
+            task="open";
+
         }
         
         
@@ -35,18 +40,22 @@ public class DoorOpen : MonoBehaviour
         if (!isClosing) {
             isClosing = true;
             isAnimating = true;
+            initialRot = hinge.transform.rotation;
             targetRot = closeDoorRotationDummy.transform.rotation;
             StartCoroutine(AnimateDoor());
             isOpening = false;
+            task="close";
         }
     }
 
     private IEnumerator AnimateDoor() {
         float currentTime=0;
+        Debug.Log("currentTime="+currentTime);
         float animationDuration = 1;
         while(currentTime<animationDuration) {
+            Debug.Log(task + " "+ (currentTime/animationDuration));
             hinge.transform.rotation = Quaternion.Slerp(
-                transform.rotation,
+                initialRot,
                 targetRot,
                 currentTime/animationDuration
             );
@@ -55,6 +64,8 @@ public class DoorOpen : MonoBehaviour
         }
         hinge.transform.rotation = targetRot;
         isAnimating = false;
+        Debug.Log("End of animation");
+        StopCoroutine(AnimateDoor());
 
     }
 }

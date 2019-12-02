@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private float ver, hor, mouseY, mouseX, jump, fire1, oldJumpDistance;
     private Transform mainCam;
     private bool isJumping;
+    public bool isCarryingItem;
 
     private void Start() {
         mainCam = Camera.main.transform;
@@ -42,10 +43,18 @@ public class PlayerMovement : MonoBehaviour
 
 
     private void MoveForwardBack() {
-        transform.position += (transform.forward * (ver * moveSpeed));
+        float ms = moveSpeed;
+        if (isCarryingItem) {
+            ms = moveSpeed / 2;
+        }
+        transform.position += (transform.forward * (ver * ms));
     }
     private void MoveLeftRight() {
-        transform.position += (transform.right * (hor * moveSpeed));
+        float ms = moveSpeed;
+        if (isCarryingItem) {
+            ms = moveSpeed / 2;
+        }
+        transform.position += (transform.right * (hor * ms));
     }
 
     private void TurnLeftRight() {

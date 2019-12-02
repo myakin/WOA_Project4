@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - PlayerPart
+  - Chair
   layers:
   - Default
   - TransparentFX
