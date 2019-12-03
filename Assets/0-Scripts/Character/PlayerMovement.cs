@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         if (isJumping) {
             CheckJump();
         }
+        //Debug.Log("jump="+jump+" isJumping="+isJumping);
     }
 
 
