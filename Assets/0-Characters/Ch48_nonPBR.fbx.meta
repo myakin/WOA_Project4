@@ -101,7 +101,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -119,8 +119,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -145,7 +145,16 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
+  referencedClips:
+  - 33a7c413fbfe443a0ab4508f8b8efba4
+  - 71d69d58cf4ea4f30a0d3127b8e87bac
+  - b7091af9cc3b84e59ad5de426424f82d
+  - 0d21223f3ee2f48b09ba5247e9efda5b
+  - d2f143d8052ec48cd869b026218d7987
+  - bed56b747edcd475781f0c66f7980859
+  - 429e59781b14f41f9b041ed2447a6fc6
+  - 38f96cd56452e4ebbbd8bd925f2c967b
+  - cf9a1d8ba49c3484ebe5874c20f44cf3
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -162,10 +171,10 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
