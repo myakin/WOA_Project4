@@ -30,7 +30,8 @@ public class CarryMe : MonoBehaviour
                 isBeingCarried = true;
                 canCarryMe = false;
                 keyBlocker = true;
-                player.GetComponent<PlayerMovement>().isCarryingItem = true;
+                //player.GetComponent<PlayerMovement>().isCarryingItem = true;
+                player.GetComponent<PlayerMovementWithRootAnimation>().isCarryingItem = true;
                 UIManager uiManager = GameObject.FindGameObjectWithTag("UserInterface").GetComponent<UIManager>();
                 uiManager.SetMessageText("Beni bırakmak için tekrar F tuşuna bas.", 7f);
             }
@@ -42,7 +43,8 @@ public class CarryMe : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.F)) {
                     isBeingCarried = false;
                     canCarryMe = true;
-                    player.GetComponent<PlayerMovement>().isCarryingItem = false;
+                    // player.GetComponent<PlayerMovement>().isCarryingItem = false;
+                    player.GetComponent<PlayerMovementWithRootAnimation>().isCarryingItem = false;
                 }
             }  
         }
